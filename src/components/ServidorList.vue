@@ -35,7 +35,7 @@ export default {
   .selector {
     display: flex;
     justify-content: space-between;
-    padding: 13px 16px;
+    padding: 11px 16px;
     align-items: center;
     color: var(--text-color);
     box-shadow: 0 1px 2px rgba($color: #000000, $alpha: 0.5);

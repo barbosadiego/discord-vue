@@ -2,18 +2,21 @@
   <div id="app">
     <ChannelList />
     <ServidorList />
+    <ChatTitle />
   </div>
 </template>
 
 <script>
 import ChannelList from '@/components/ChannelList.vue';
 import ServidorList from '@/components/ServidorList.vue';
+import ChatTitle from '@/components/ChatTitle.vue';
 
 export default {
   name: 'App',
   components: {
     ChannelList,
     ServidorList,
+    ChatTitle,
   }
 }
 </script>
@@ -55,6 +58,7 @@ h2{
   font-size: 14px;
   line-height: 14px;
   text-transform: uppercase;
+  color: var(--text-color);
 }
 
 #app{
