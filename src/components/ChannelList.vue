@@ -1,8 +1,7 @@
 <template>
   <div class="channel-list">
-    <div v-for="channel, index in 50" :key="index">
-      <Channel />
-    </div>
+    <Channel isActive icon="@/assets/discord.svg" />
+    <Channel v-for="channel, index in 12" :key="index" />
   </div>
 </template>
 
@@ -22,5 +21,17 @@ export default {
   background-color: var(--bg-color-dark);
   grid-row: 1/-1;
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 0px;
+  //hide scrollbar but allow scrolling
+  -ms-overflow-style: none; //edge
+  scrollbar-width: none; //firefox
+  // safari, chrome, opera
+  &::-webkit-scrollbar{
+    display: none
+  };
 }
 </style>
