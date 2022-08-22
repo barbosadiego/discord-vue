@@ -1,6 +1,7 @@
 <template>
   <div class="channel-list">
     <Channel isActive hasNotification/>
+    <div class="divider"></div>
     <Channel v-for="channel, index in 4" :key="index" chat/>
     <Channel hasNotification/>
     <Channel v-for="channel, index in 7" :key="index" />
@@ -35,5 +36,11 @@ export default {
   &::-webkit-scrollbar{
     display: none
   };
+
+  .divider{
+    width: 32px;
+    height: 2px;
+    background-color: var(--bg-color-medium);
+  }
 }
 </style>
