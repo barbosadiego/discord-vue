@@ -1,16 +1,19 @@
 <template>
   <div id="app">
     <ChannelList />
+    <ServidorList />
   </div>
 </template>
 
 <script>
 import ChannelList from '@/components/ChannelList.vue';
+import ServidorList from '@/components/ServidorList.vue';
 
 export default {
   name: 'App',
   components: {
     ChannelList,
+    ServidorList,
   }
 }
 </script>
@@ -38,6 +41,20 @@ body{
 body, h1, h2, p, ul, li{
   margin: 0px;
   padding: 0px;
+}
+
+h1{
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 19px;
+  color: var(--text-color);
+}
+
+h2{
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
 }
 
 #app{
