@@ -22,7 +22,7 @@ export default {
   --bg-color-light: #36393F;
 
   --primary-color: #6E86D6;
-  --notification-icon-color: #F84A4B;
+  --notification-color: #F84A4B;
   --accent-color: #FFA839;
   --text-color: #FFFFF8;
 }

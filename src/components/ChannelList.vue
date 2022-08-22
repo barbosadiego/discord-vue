@@ -1,7 +1,9 @@
 <template>
   <div class="channel-list">
-    <Channel isActive icon="@/assets/discord.svg" />
-    <Channel v-for="channel, index in 12" :key="index" />
+    <Channel isActive hasNotification/>
+    <Channel v-for="channel, index in 4" :key="index" chat/>
+    <Channel hasNotification/>
+    <Channel v-for="channel, index in 7" :key="index" />
   </div>
 </template>
 
