@@ -3,6 +3,7 @@
     <ChannelList />
     <ServidorList />
     <ChatTitle />
+    <ChatArea />
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import ChannelList from '@/components/ChannelList.vue';
 import ServidorList from '@/components/ServidorList.vue';
 import ChatTitle from '@/components/ChatTitle.vue';
+import ChatArea from '@/components/ChatArea.vue';
 
 export default {
   name: 'App',
@@ -17,6 +19,7 @@ export default {
     ChannelList,
     ServidorList,
     ChatTitle,
+    ChatArea,
   }
 }
 </script>

@@ -13,16 +13,19 @@
     <ChatItem title="lolzinho" />
     <ChatItem title="valorant" />
     <ChatItem title="csgo" />
+    <User />
   </div>
 </template>
 
 <script>
 import ChatItem from '@/components/ChatItem.vue';
+import User from '@/components/User.vue';
 
 export default {
   name: 'ServidorList',
   components: {
     ChatItem,
+    User,
   },
 };
 </script>
@@ -31,6 +34,8 @@ export default {
 .servidor-list {
   background-color: var(--bg-color-medium);
   grid-row: 1/-1;
+  display: flex;
+  flex-direction: column;
 
   .selector {
     display: flex;

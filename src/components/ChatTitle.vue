@@ -18,6 +18,7 @@ export default {
 
 <style lang="scss" scoped>
 .chat-title{
+  z-index: 5;
   grid-row: 1;
   grid-column: 3/5;
   background-color: var(--bg-color-light);
