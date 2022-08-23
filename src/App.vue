@@ -4,6 +4,7 @@
     <ServidorList />
     <ChatTitle />
     <ChatArea />
+    <UserList />
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import ChannelList from '@/components/ChannelList.vue';
 import ServidorList from '@/components/ServidorList.vue';
 import ChatTitle from '@/components/ChatTitle.vue';
 import ChatArea from '@/components/ChatArea.vue';
+import UserList from '@/components/UserList.vue';
 
 export default {
   name: 'App',
@@ -20,6 +22,7 @@ export default {
     ServidorList,
     ChatTitle,
     ChatArea,
+    UserList,
   }
 }
 </script>
