@@ -70,7 +70,7 @@ export default {
 
     //chrome, safari and edge
     &::-webkit-scrollbar-thumb{
-      background-color: #000000;
+      background-color: #202225;
       border-radius: 4px;
     }
   }
