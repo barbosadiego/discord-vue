@@ -1,15 +1,31 @@
 <template>
   <div class="chat-area">
+    <div class="message-area">
+      <Message v-if="isSend">
+        {{ text }}
+      </Message>
+    </div>
     <div class="input-area">
       <span class="material-icons">alternate_email</span>
-      <input type="text" placeholder="Conversar em #chat-livre" />
+      <input type="text" placeholder="Conversar em #chat-livre" v-model="text" @keyup.enter="isSend = true"/>
     </div>
   </div>
 </template>
 
 <script>
+import Message from '@/components/Message.vue';
+
 export default {
   name: 'ChatArea',
+  components: {
+    Message,
+  },
+  data(){
+    return {
+      text: '',
+      isSend: false,
+    }
+  }
 };
 </script>
 
@@ -20,6 +36,26 @@ export default {
   background-color: var(--bg-color-light);
   position: relative;
   color: rgba($color: #000000, $alpha: 0.7);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 90px;
+
+  .message-area{
+    overflow-y: auto;
+    flex: 1;
+
+    //chrome, safari and edge
+    &::-webkit-scrollbar{
+      width: 8px;
+      background-color: #2F3136;
+    }
+
+    //chrome, safari and edge
+    &::-webkit-scrollbar-thumb{
+      background-color: #000000;
+      border-radius: 4px;
+    }
+  }
 
   .input-area {
     display: flex;
@@ -27,33 +63,31 @@ export default {
     padding-inline: 16px;
     padding-top: 20px;
     padding-bottom: 23px;
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    margin-inline: auto;
+    z-index: 5;
+    background-color: var(--bg-color-light);
 
     input {
       background-color: #40444b;
       padding: 12px;
-      flex: 1;
       border: none;
       border-radius: 7px;
       color: var(--text-color);
       font-size: 1rem;
       padding-left: 40px;
       outline: none;
+      width: 100%;
 
       &::placeholder {
         font-size: 16px;
       }
 
-      &:focus{
+      &:focus {
         box-shadow: 0 0 0 2px var(--accent-color);
       }
     }
 
     .material-icons {
-      color: #7A7C80;
+      color: #7a7c80;
       position: absolute;
       left: 25px;
     }

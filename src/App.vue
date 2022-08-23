@@ -44,7 +44,7 @@ body{
   font-family: 'Roboto', sans-serif;
 }
 
-body, h1, h2, p, ul, li{
+body, h1, h2, h3, p, ul, li{
   margin: 0px;
   padding: 0px;
 }

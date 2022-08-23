@@ -4,7 +4,7 @@
     <div class="divider"></div>
     <Channel v-for="channel, index in 4" :key="index" chat/>
     <Channel hasNotification/>
-    <Channel v-for="channel, index in 7" :key="index" />
+    <Channel v-for="channel, index in 7" :key="index + 5" />
   </div>
 </template>
 
