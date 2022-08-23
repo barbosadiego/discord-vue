@@ -6,7 +6,7 @@
     </div>
     <div class="offline">
       <span>OFFLINE - 18</span>
-      <Avatar name="Diego Fernandes"/>
+      <Avatar name="Diego Fernandes" isBot/>
       <Avatar name="Fulano" v-for="item in 18" :key="item.id"/>
     </div>
   </div>
@@ -29,5 +29,14 @@ export default {
   grid-row: 2/4;
   background-color: var(--bg-color-medium);
   padding: 23px 16px;
+
+  span{
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 12px;
+    margin-bottom: 10px;
+    color: rgba($color: #fff, $alpha: .45);
+  }
 }
 </style>
