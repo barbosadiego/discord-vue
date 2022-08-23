@@ -1,13 +1,25 @@
 <template>
   <div class="chat-area">
     <div class="message-area">
-      <Message v-if="isSend">
-        {{ text }}
-      </Message>
+      <Message 
+        v-for="item in 17" 
+        :key="item.id" 
+        user="Guilherme Rodz" 
+        text="Isso é uma mensagem"
+      />
+      <Message 
+        isAtual
+        isBot
+        user="Diego Fernandes" 
+        text="@Guilherme Rodz, me carrega no LoL e CS de novo por favor?"
+      />
     </div>
     <div class="input-area">
       <span class="material-icons">alternate_email</span>
-      <input type="text" placeholder="Conversar em #chat-livre" v-model="text" @keyup.enter="isSend = true"/>
+      <input 
+        type="text" 
+        placeholder="Conversar em #chat-livre" 
+      />
     </div>
   </div>
 </template>
@@ -20,11 +32,17 @@ export default {
   components: {
     Message,
   },
-  data(){
-    return {
-      text: '',
-      isSend: false,
+  methods:{
+    scroll(){
+      const el = document.querySelector('.message-area');
+      el.scrollTo({
+        top: 500,
+        behavior: 'smooth'
+      })
     }
+  },
+  mounted(){
+    this.scroll()
   }
 };
 </script>

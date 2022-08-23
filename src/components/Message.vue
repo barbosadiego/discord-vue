@@ -1,11 +1,9 @@
 <template>
-  <div class="message">
+  <div class="message" :class="{ 'isAtual': isAtual, 'isBot' : isBot }">
     <div class="avatar"></div>
     <div class="data">
-      <h3 class="user">Guilherme Rodz <span>12/06/2022</span></h3>
-      <p>
-        <slot></slot>
-      </p>
+      <h3 class="user">{{ user }} <span>12/06/2022</span></h3>
+      <p> {{ text }}</p>
     </div>
   </div>
 </template>
@@ -13,6 +11,12 @@
 <script>
 export default {
   name: 'MessageComponent',
+  props: {
+    isAtual: Boolean,
+    text: String,
+    user: String,
+    isBot: Boolean,
+  },
 };
 </script>
 
@@ -21,7 +25,8 @@ export default {
   color: var(--text-color);
   display: flex;
   gap: 17px;
-  padding: 22px 16px;
+  padding: 6px 16px;
+  margin: 15px 0px;
 
   .avatar {
     width: 40px;
@@ -41,6 +46,39 @@ export default {
         font-size: 13px;
         font-weight: 400;
         margin-left: 6px;
+      }
+    }
+  }
+
+  &.isAtual {
+    background-color: #413f3f;
+    border-left: 2px solid var(--accent-color);
+
+    .avatar{
+      background-color: var(--accent-color);
+    }
+  }
+
+  &.isBot{
+    .data .user {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+
+      &::after{
+        content: 'BOT';
+        display: inline-grid;
+        place-items: center;
+        width: 28px;
+        height: 15px;
+        border-radius: 4px;
+        background-color: var(--primary-color);
+        font-size: 9px;
+        line-height: 10px;
+      }
+      
+      span{
+        display: none;
       }
     }
   }
