@@ -28,5 +28,6 @@ export default {
   grid-column: 4/5;
   grid-row: 2/4;
   background-color: var(--bg-color-medium);
+  padding: 23px 16px;
 }
 </style>
