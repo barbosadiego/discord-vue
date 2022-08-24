@@ -1,14 +1,14 @@
 <template>
   <div class="mobile-view">
     <div class="superior-bar">
-      <span class="material-icons">menu</span>
+      <span class="material-icons menu" @click="toggleMenu">menu</span>
       <div class="server-title">
         <span data-v-4525fde0="" class="material-icons">tag</span>
         <h3 data-v-4525fde0="">chat livre</h3>
         <div data-v-4525fde0="" class="divider"></div>
         <p data-v-4525fde0="">Canal aberto para conversas</p>
       </div>
-      <span class="material-icons">group</span>
+      <span class="material-icons group">group</span>
     </div>
     <div class="message-area">
       <Message
@@ -29,6 +29,11 @@ export default {
   components: {
     Message,
   },
+  methods: {
+    toggleMenu() {
+      this.$emit('changeView');
+    },
+  },
 };
 </script>
 
@@ -36,7 +41,6 @@ export default {
 .mobile-view {
   grid-column: 1/-1;
   grid-row: 1/-1;
-  z-index: 20;
   background-color: var(--bg-color-light);
   display: grid;
 
@@ -48,6 +52,11 @@ export default {
     gap: 10px;
     color: rgba($color: #fff, $alpha: 0.7);
 
+    .menu,
+    .group {
+      cursor: pointer;
+    }
+
     .server-title {
       flex: 1;
       display: flex;
@@ -57,6 +66,7 @@ export default {
 
       h3 {
         font-size: 14px;
+        line-height: 16px;
       }
 
       .divider {

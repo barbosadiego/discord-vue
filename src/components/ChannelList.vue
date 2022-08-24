@@ -1,6 +1,6 @@
 <template>
   <div class="channel-list">
-    <Channel isActive hasNotification/>
+    <Channel isActive hasNotification @click.native="toggleView"/>
     <div class="divider"></div>
     <Channel v-for="channel, index in 4" :key="index" chat/>
     <Channel hasNotification/>
@@ -16,6 +16,11 @@ export default {
   components: {
     Channel,
   },
+  methods:{
+    toggleView(){
+      this.$emit('toggleView')
+    }
+  }
 };
 </script>
 

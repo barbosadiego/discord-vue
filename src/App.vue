@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <MobileView v-if="isMobile"/>
-    <ChannelList />
+    <MobileView v-if="isMobile" v-on:changeView="changeView" />
+    <ChannelList v-on:toggleView="toggleView" />
     <ServidorList />
     <ChatTitle />
     <ChatArea />
@@ -17,6 +17,7 @@ import ChatArea from '@/components/ChatArea.vue';
 import UserList from '@/components/UserList.vue';
 import MobileView from '@/components/MobileView.vue';
 
+
 export default {
   name: 'App',
   components: {
@@ -27,56 +28,73 @@ export default {
     UserList,
     MobileView,
   },
-  data(){
-    return{
+  data() {
+    return {
       isMobile: false,
-    }
+    };
   },
   methods: {
-    handleView(){
-      window.innerWidth <= 900 ? this.isMobile = true : this.isMobile = false;
-    }
+    handleView() {
+      window.innerWidth <= 900
+        ? (this.isMobile = true)
+        : (this.isMobile = false);
+    },
+    changeView() {
+      const view = document.querySelector('.mobile-view');
+      view.style.transform = 'translateX(-100%)';
+    },
+    toggleView() {
+      const view = document.querySelector('.mobile-view');
+      view.style.transform = 'translateX(0%)';
+      view.style.zIndex = 20
+    },
   },
-  created(){
+  created() {
     this.handleView();
-    window.addEventListener('resize', this.handleView)
-  }
-}
+    window.addEventListener('resize', this.handleView);
+  },
+};
 </script>
 
 <style lang="scss">
-:root{
+:root {
   --bg-color-dark: #202225;
-  --bg-color-medium: #2F3136;
-  --bg-color-light: #36393F;
+  --bg-color-medium: #2f3136;
+  --bg-color-light: #36393f;
 
-  --primary-color: #6E86D6;
-  --notification-color: #F84A4B;
-  --accent-color: #FFA839;
-  --text-color: #FFFFF8;
+  --primary-color: #6e86d6;
+  --notification-color: #f84a4b;
+  --accent-color: #ffa839;
+  --text-color: #fffff8;
 }
 
-*{
+* {
   box-sizing: border-box;
 }
 
-body{
+body {
   font-family: 'Roboto', sans-serif;
 }
 
-body, h1, h2, h3, p, ul, li{
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
   margin: 0px;
   padding: 0px;
 }
 
-h1{
+h1 {
   font-weight: 700;
   font-size: 1rem;
   line-height: 19px;
   color: var(--text-color);
 }
 
-h2{
+h2 {
   font-weight: 500;
   font-size: 14px;
   line-height: 14px;
@@ -84,7 +102,7 @@ h2{
   color: var(--text-color);
 }
 
-#app{
+#app {
   height: 100vh;
   width: 100%;
   display: grid;
@@ -92,7 +110,7 @@ h2{
   grid-template-rows: 46px 1fr 52px;
   overflow: hidden;
 
-  @media (max-width:900px){
+  @media (max-width: 900px) {
     grid-template-columns: 72px 1fr;
   }
 }
