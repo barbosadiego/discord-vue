@@ -2,18 +2,19 @@
   <div class="mobile-view">
     <div class="superior-bar">
       <span class="material-icons">menu</span>
-      <div>
+      <div class="server-title">
         <span data-v-4525fde0="" class="material-icons">tag</span>
         <h3 data-v-4525fde0="">chat livre</h3>
+        <div data-v-4525fde0="" class="divider"></div>
+        <p data-v-4525fde0="">Canal aberto para conversas</p>
       </div>
-      <div data-v-4525fde0="" class="divider"></div>
-      <div data-v-4525fde0="" class="divider"></div>
+      <span class="material-icons">group</span>
     </div>
     <div class="message-area">
-      <Message 
-        v-for="item in 17" 
-        :key="item.id" 
-        user="Guilherme Rodz" 
+      <Message
+        v-for="item in 17"
+        :key="item.id"
+        user="Guilherme Rodz"
         text="Isso é uma mensagem"
       />
     </div>
@@ -38,13 +39,44 @@ export default {
   z-index: 20;
   background-color: var(--bg-color-light);
   display: grid;
-  padding: 10px;
 
-  .superior-bar{
+  .superior-bar {
+    padding: 16px;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    color: rgba($color: #fff, $alpha: 0.7);
+
+    .server-title {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-left: 7px;
+
+      h3 {
+        font-size: 14px;
+      }
+
+      .divider {
+        width: 2px;
+        height: 24px;
+        display: block;
+        background-color: #42454b;
+      }
+    }
+
+    p {
+      width: 15ch;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 14px;
+    }
   }
 
-  .message-area{
+  .message-area {
     overflow-y: auto;
   }
 }
