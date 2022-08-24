@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <MobileView v-if="isMobile"/>
     <ChannelList />
     <ServidorList />
     <ChatTitle />
@@ -14,6 +15,7 @@ import ServidorList from '@/components/ServidorList.vue';
 import ChatTitle from '@/components/ChatTitle.vue';
 import ChatArea from '@/components/ChatArea.vue';
 import UserList from '@/components/UserList.vue';
+import MobileView from '@/components/MobileView.vue';
 
 export default {
   name: 'App',
@@ -23,6 +25,21 @@ export default {
     ChatTitle,
     ChatArea,
     UserList,
+    MobileView,
+  },
+  data(){
+    return{
+      isMobile: false,
+    }
+  },
+  methods: {
+    handleView(){
+      window.innerWidth <= 900 ? this.isMobile = true : this.isMobile = false;
+    }
+  },
+  created(){
+    this.handleView();
+    window.addEventListener('resize', this.handleView)
   }
 }
 </script>
