@@ -33,9 +33,14 @@ export default {
   -ms-overflow-style: none; //edge
   scrollbar-width: none; //firefox
   // safari, chrome, opera
+  
   &::-webkit-scrollbar{
     display: none
   };
+
+  @media (max-width:900px){
+    grid-column: 1/2;
+  }
 
   .divider{
     width: 32px;

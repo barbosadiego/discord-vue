@@ -27,7 +27,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 :root{
   --bg-color-dark: #202225;
   --bg-color-medium: #2F3136;
@@ -74,5 +74,9 @@ h2{
   grid-template-columns: 70px 240px 1fr 240px;
   grid-template-rows: 46px 1fr 52px;
   overflow: hidden;
+
+  @media (max-width:900px){
+    grid-template-columns: 72px 1fr;
+  }
 }
 </style>

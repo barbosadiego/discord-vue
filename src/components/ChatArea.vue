@@ -57,6 +57,9 @@ export default {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 60px;
+  @media (max-width:900px){
+    display: none;
+  }
 
   .message-area{
     overflow-y: auto;

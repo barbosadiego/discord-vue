@@ -27,6 +27,9 @@ export default {
   padding-inline: 17px;
   color: rgba($color: #ffffff, $alpha: .5);
   box-shadow: 0 1px 2px rgba($color: #000000, $alpha: .5);
+  @media (max-width:900px){
+    display: none;
+  }
 
   div{
     display: flex;

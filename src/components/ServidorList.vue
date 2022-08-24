@@ -36,6 +36,9 @@ export default {
   grid-row: 1/-1;
   display: flex;
   flex-direction: column;
+  @media (max-width:900px){
+    grid-column: 2/3;
+  }
 
   .selector {
     display: flex;

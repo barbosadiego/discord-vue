@@ -29,6 +29,9 @@ export default {
   grid-row: 2/4;
   background-color: var(--bg-color-medium);
   padding: 23px 16px;
+  @media (max-width:900px){
+    display: none;
+  }
 
   span{
     display: block;
