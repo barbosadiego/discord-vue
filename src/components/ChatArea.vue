@@ -56,7 +56,7 @@ export default {
   color: rgba($color: #000000, $alpha: 0.7);
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 90px;
+  grid-template-rows: 1fr 60px;
 
   .message-area{
     overflow-y: auto;
@@ -79,8 +79,6 @@ export default {
     display: flex;
     align-items: center;
     padding-inline: 16px;
-    padding-top: 20px;
-    padding-bottom: 23px;
     z-index: 5;
     background-color: var(--bg-color-light);
 
